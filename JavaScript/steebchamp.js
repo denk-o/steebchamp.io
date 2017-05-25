@@ -15,9 +15,12 @@ function lastPlayed() {
   var url = urlBuilder_findInvokers(dota2key,id);
   $.ajax({
     dataType: "json",
-    url: 'https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v0001/?key=6004105BA153082998C0FA0F064608A2&account_id=76561198010677456'
+    url: 'https://crossorigin.me/'+url
   }).done(function(response) {
     console.log(response);
+    var date = new Date(response.result.matches[0].start_time*1000);
+    console.log(date);
+    $('.text_display').text('Sir Steebert last played The Balanced Magic Man on:'+date);
   })
 }
 
