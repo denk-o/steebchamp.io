@@ -12,6 +12,7 @@ function urlBuilder_findInvokers(apiKey, playerID) {
 }
 
 function lastPlayed() {
+  //fix this cross origin shit eventually
   var url = urlBuilder_findInvokers(dota2key,id);
   $.ajax({
     dataType: "json",
